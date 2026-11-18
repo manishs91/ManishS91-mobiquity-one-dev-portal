@@ -1,0 +1,26 @@
+# Local stack: portal on :3000, mock sandbox on :4010.
+#   cp .env.example .env   (set SESSION_SECRET and CREDENTIALS_ENCRYPTION_KEY)
+#   docker compose up --build
+services:
+  mock:
+    build: { context: ., target: mock }
+    environment:
+      MOCK_ADMIN_SECRET: ${MOCK_ADMIN_SECRET:-dev-mock-admin-secret}
+      MOCK_STATE_FILE: /data/mock-state.json
+    volumes: [mock-data:/data]
+    ports: ["4010:4010"]
+
+  portal:
+    build: { context: ., target: portal }
+    depends_on: [mock]
+    env_file: [.env]
+    environment:
+      SANDBOX_API_BASE_URL: http://mock:4010
+      STORE_FILE_PATH: /app/.data/portal-db.json
+      MOCK_ADMIN_SECRET: ${MOCK_ADMIN_SECRET:-dev-mock-admin-secret}
+    volumes: [portal-data:/app/.data]
+    ports: ["3000:3000"]
+
+volumes:
+  mock-data:
+  portal-data:
