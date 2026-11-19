@@ -26,7 +26,7 @@ const schema = z.object({
 
 const parsed = schema.safeParse(process.env);
 if (!parsed.success) {
-  throw new Error(`Invalid environment configuration:\n${parsed.error.issues.map((i) => `  ${i.path.join(".")}: ${i.message}`).join("\n")}`);
+  throw new Error(`Invalid environment configuration:\n${parsed.error.issues.map((i) => `  ${i.path.map(String).join(".")}: ${i.message}`).join("\n")}`);
 }
 
 const raw = parsed.data;

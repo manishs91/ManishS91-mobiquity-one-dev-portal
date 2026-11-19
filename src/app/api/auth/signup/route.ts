@@ -14,7 +14,7 @@ const Body = z.object({
     .refine((p) => /[a-z]/i.test(p) && /\d/.test(p), "Include letters and at least one number"),
   company: z.string().trim().max(120).default(""),
   inviteToken: z.string().max(200).optional(),
-  acceptTerms: z.literal(true, { errorMap: () => ({ message: "Accept the developer terms to continue" }) }),
+  acceptTerms: z.literal(true, { error: "Accept the developer terms to continue" }),
 });
 
 export const POST = route(async (req) => {

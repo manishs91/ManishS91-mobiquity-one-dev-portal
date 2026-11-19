@@ -18,6 +18,8 @@ jobs:
           node-version: 22
       # Switch to `npm ci` (and add `cache: npm` above) once package-lock.json is committed.
       - run: npm install
+      - name: Check dependencies for known vulnerabilities
+        run: npm audit --omit=dev --audit-level=high
       - run: npm run typecheck
       - run: npm test
       - name: Lint the OpenAPI spec

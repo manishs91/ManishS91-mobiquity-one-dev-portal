@@ -8,7 +8,7 @@ const Body = z.object({
   website: z.string().trim().url().max(300),
   businessCategory: z.string().trim().min(2).max(100),
   expectedMonthlyVolume: z.string().trim().min(1).max(100),
-  paymentMethods: z.array(z.enum(["cards", "upi", "wallets", "netbanking", "emi", "bnpl"])).min(1, "Pick at least one payment method"),
+  paymentMethods: z.array(z.enum(["cards", "upi", "wallets", "netbanking", "emi", "bnpl"])).min(1, "Pick at least one payment method").max(6),
   integrationType: z.enum(["s2s", "hosted", "both"]),
   contactName: z.string().trim().min(2).max(100),
   contactEmail: z.string().trim().email().max(254),

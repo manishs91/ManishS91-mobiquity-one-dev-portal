@@ -1,6 +1,6 @@
 import "server-only";
 import { NextResponse } from "next/server";
-import type { z, ZodTypeAny } from "zod";
+import type { z } from "zod";
 import { getSession, type SessionContext } from "./auth/session";
 import type { Role } from "./store";
 
@@ -26,7 +26,7 @@ export function assertSameOrigin(req: Request) {
   if (new URL(origin).host !== host) throw new HttpError(403, "Cross-origin request blocked");
 }
 
-export async function parseJson<S extends ZodTypeAny>(req: Request, schema: S): Promise<z.output<S>> {
+export async function parseJson<S extends z.ZodType>(req: Request, schema: S): Promise<z.output<S>> {
   let raw: unknown;
   try {
     raw = await req.json();
@@ -35,7 +35,7 @@ export async function parseJson<S extends ZodTypeAny>(req: Request, schema: S): 
   }
   const parsed = schema.safeParse(raw);
   if (!parsed.success) {
-    throw new HttpError(422, "Validation failed", parsed.error.issues.map((i) => ({ field: i.path.join("."), message: i.message })));
+    throw new HttpError(422, "Validation failed", parsed.error.issues.map((i) => ({ field: i.path.map(String).join("."), message: i.message })));
   }
   return parsed.data;
 }
