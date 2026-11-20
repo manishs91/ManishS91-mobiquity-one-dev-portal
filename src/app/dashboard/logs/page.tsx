@@ -26,7 +26,7 @@ export default async function LogsPage() {
             <li key={l.id}>
               <details className="panel">
                 <summary className="flex cursor-pointer list-none flex-wrap items-center gap-3 px-4 py-3 text-sm marker:hidden">
-                  <span className={`rounded px-2 py-0.5 font-mono text-xs font-semibold ${l.status < 300 && l.status > 0 ? "bg-rail-wash text-rail-deep" : "bg-danger-wash text-danger"}`}>{l.status}</span>
+                  <span className={`rounded px-2 py-0.5 font-mono text-xs font-semibold ${l.status < 300 && l.status > 0 ? "bg-ok-wash text-ok-deep" : "bg-danger-wash text-danger"}`}>{l.status}</span>
                   <span className="font-mono text-xs font-semibold">{l.method}</span>
                   <code className="text-xs">{l.path}</code>
                   <span className="ml-auto text-xs text-ink-faint">{l.durationMs} ms, {new Date(l.createdAt).toLocaleString()}</span>
@@ -34,11 +34,11 @@ export default async function LogsPage() {
                 <div className="grid gap-3 border-t border-line-soft p-4 lg:grid-cols-2">
                   <div>
                     <p className="mb-1 text-xs font-semibold text-ink-soft">Request body</p>
-                    <pre className="max-h-80 overflow-auto rounded bg-code p-3 text-xs text-[#dbe7f3]"><code>{highlightJson(pretty(l.requestBody))}</code></pre>
+                    <pre className="max-h-80 overflow-auto rounded bg-code p-3 text-xs text-[#e6e7ea]"><code>{highlightJson(pretty(l.requestBody))}</code></pre>
                   </div>
                   <div>
                     <p className="mb-1 text-xs font-semibold text-ink-soft">Response body</p>
-                    <pre className="max-h-80 overflow-auto rounded bg-code p-3 text-xs text-[#dbe7f3]"><code>{highlightJson(pretty(l.responseBody))}</code></pre>
+                    <pre className="max-h-80 overflow-auto rounded bg-code p-3 text-xs text-[#e6e7ea]"><code>{highlightJson(pretty(l.responseBody))}</code></pre>
                   </div>
                 </div>
               </details>

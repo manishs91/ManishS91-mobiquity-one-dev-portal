@@ -46,9 +46,9 @@ export function CodeTabs({ tabs, title, rememberLanguage = false, maxHeight = "2
   if (!tab) return null;
 
   return (
-    <div className="overflow-hidden rounded-[var(--radius-md)] bg-code text-[#dbe7f3]">
+    <div className="overflow-hidden rounded-[var(--radius-md)] bg-code text-[#e6e7ea]">
       <div className="flex items-center gap-1 border-b border-code-line px-2">
-        {title ? <span className="px-2 py-2 text-xs font-semibold text-[#9fb3c8]">{title}</span> : null}
+        {title ? <span className="px-2 py-2 text-xs font-semibold text-[#a3a7b0]">{title}</span> : null}
         <div role="tablist" className="flex min-w-0 flex-1 gap-0.5 overflow-x-auto">
           {tabs.length > 1 &&
             tabs.map((t) => (
@@ -58,7 +58,7 @@ export function CodeTabs({ tabs, title, rememberLanguage = false, maxHeight = "2
                 aria-selected={t.id === tab.id}
                 onClick={() => select(t.id)}
                 className={`shrink-0 border-b-2 px-2.5 py-2 text-xs font-semibold ${
-                  t.id === tab.id ? "border-signal text-white" : "border-transparent text-[#9fb3c8] hover:text-white"
+                  t.id === tab.id ? "border-signal text-white" : "border-transparent text-[#a3a7b0] hover:text-white"
                 }`}
               >
                 {t.label}

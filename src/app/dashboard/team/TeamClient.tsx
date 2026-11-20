@@ -89,11 +89,11 @@ export function TeamClient({ members: m0, invites: i0, canManage, selfId }: { me
           <button className="btn btn-primary" disabled={inv.busy}>{inv.busy ? "Creating…" : "Create invite link"}</button>
           {inv.error ? <p role="alert" className="w-full text-sm text-danger">{inv.error}</p> : null}
           {link ? (
-            <div className="w-full rounded-[var(--radius-md)] bg-rail-wash p-3 text-sm">
+            <div className="w-full rounded-[var(--radius-md)] bg-ok-wash p-3 text-sm">
               <p className="font-semibold">Send this link to your teammate. It works once and expires in 7 days.</p>
               <div className="mt-1 flex items-center gap-2">
                 <code className="min-w-0 flex-1 break-all">{link}</code>
-                <CopyButton text={link} className="!text-rail hover:!bg-white" />
+                <CopyButton text={link} className="!text-brand-ink hover:!bg-white" />
               </div>
             </div>
           ) : null}

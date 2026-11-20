@@ -1,8 +1,8 @@
 const styles: Record<string, string> = {
-  get: "bg-rail-wash text-rail-deep",
+  get: "bg-ok-wash text-ok-deep",
   post: "bg-[#e6eefb] text-[#1f4fa3]",
-  put: "bg-signal-wash text-[#8a4b00]",
-  patch: "bg-signal-wash text-[#8a4b00]",
+  put: "bg-signal-wash text-signal-ink",
+  patch: "bg-signal-wash text-signal-ink",
   delete: "bg-danger-wash text-danger",
 };
 

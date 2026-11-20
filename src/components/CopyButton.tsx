@@ -6,7 +6,7 @@ export function CopyButton({ text, label = "Copy", className = "" }: { text: str
   return (
     <button
       type="button"
-      className={`rounded px-2 py-1 text-xs font-semibold text-[#9fb3c8] hover:bg-code-line hover:text-white ${className}`}
+      className={`rounded px-2 py-1 text-xs font-semibold text-[#a3a7b0] hover:bg-code-line hover:text-white ${className}`}
       onClick={async () => {
         await navigator.clipboard.writeText(text);
         setCopied(true);

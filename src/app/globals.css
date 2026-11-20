@@ -1,29 +1,39 @@
 @import "tailwindcss";
 
 /*
- * Design tokens
- * ink     — text and structure (deep slate)
- * paper   — page background (cool white, not cream)
- * rail    — primary actions; the colour of a settled payment
- * signal  — routing paths and highlights only, used sparingly
+ * Design tokens: Comviva brand (red #E31837, orange #F4901D)
+ * brand        Comviva red. Primary buttons, active navigation, logo, focus ring
+ * brand-ink    a slightly deeper red for link text, readable on white and paper (5.5:1)
+ * brand-deep   hover state and text on brand-wash
+ * signal       Comviva orange. Graphics, borders and accents only (too light for text)
+ * signal-ink   orange-brown for small text such as "required" (5.8:1)
+ * ok           success states (2xx, done, matched), so success never reads as brand red
+ * danger       errors, a dark maroon kept distinct from the brand red
+ * ink / paper  neutral charcoal and cool white
  */
 @theme {
-  --color-ink: #102a43;
-  --color-ink-soft: #486581;
-  --color-ink-faint: #829ab1;
-  --color-paper: #f7f9fc;
+  --color-brand: #e31837;
+  --color-brand-ink: #c8102e;
+  --color-brand-deep: #b3122b;
+  --color-brand-wash: #fde8eb;
+  --color-signal: #f4901d;
+  --color-signal-ink: #a84a00;
+  --color-signal-wash: #fef1e2;
+  --color-ok: #15803d;
+  --color-ok-deep: #166534;
+  --color-ok-wash: #e7f6ec;
+  --color-danger: #8f1d1d;
+  --color-danger-wash: #fdecec;
+
+  --color-ink: #1e2028;
+  --color-ink-soft: #555a66;
+  --color-ink-faint: #6b7079;
+  --color-paper: #f7f7f9;
   --color-surface: #ffffff;
-  --color-line: #d9e2ec;
-  --color-line-soft: #e9eef4;
-  --color-rail: #0e7c66;
-  --color-rail-deep: #0a5c4c;
-  --color-rail-wash: #e3f4ef;
-  --color-signal: #e8962e;
-  --color-signal-wash: #fdf1e0;
-  --color-danger: #b42318;
-  --color-danger-wash: #fdecea;
-  --color-code: #0f1f30;
-  --color-code-line: #1d3247;
+  --color-line: #e2e3e8;
+  --color-line-soft: #eeeff2;
+  --color-code: #1b1d24;
+  --color-code-line: #2a2d36;
 
   --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-jetbrains), ui-monospace, "SFMono-Regular", Menlo, monospace;
@@ -46,10 +56,10 @@
     line-height: 1.6;
   }
   ::selection {
-    background: var(--color-rail-wash);
+    background: var(--color-brand-wash);
   }
   :focus-visible {
-    outline: 2px solid var(--color-rail);
+    outline: 2px solid var(--color-brand);
     outline-offset: 2px;
     border-radius: 3px;
   }
@@ -80,11 +90,11 @@
     cursor: not-allowed;
   }
   .btn-primary {
-    background: var(--color-rail);
+    background: var(--color-brand);
     color: white;
   }
   .btn-primary:hover:not(:disabled) {
-    background: var(--color-rail-deep);
+    background: var(--color-brand-deep);
   }
   .btn-secondary {
     background: var(--color-surface);
@@ -97,7 +107,7 @@
   .btn-danger {
     background: var(--color-surface);
     color: var(--color-danger);
-    border: 1px solid #f3c4bf;
+    border: 1px solid #f0c2c2;
   }
   .btn-danger:hover:not(:disabled) {
     background: var(--color-danger-wash);
@@ -125,8 +135,8 @@
   }
   .field:focus {
     outline: none;
-    border-color: var(--color-rail);
-    box-shadow: 0 0 0 3px var(--color-rail-wash);
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 3px var(--color-brand-wash);
   }
   .label {
     display: block;
@@ -188,7 +198,7 @@
     margin: 0.25rem 0;
   }
   .prose-doc a {
-    color: var(--color-rail);
+    color: var(--color-brand-ink);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
@@ -199,7 +209,7 @@
   }
   .prose-doc pre {
     background: var(--color-code);
-    color: #dbe7f3;
+    color: #e6e7ea;
     padding: 1rem 1.1rem;
     border-radius: var(--radius-md);
     overflow-x: auto;
@@ -237,16 +247,16 @@
 
 /* JSON syntax colours inside dark code blocks */
 .tok-key {
-  color: #8fd3c3;
+  color: #f6a7b4;
 }
 .tok-str {
-  color: #f6c98b;
+  color: #f9c98f;
 }
 .tok-num {
-  color: #b6a6ff;
+  color: #b9c2ff;
 }
 .tok-lit {
-  color: #ff9e9e;
+  color: #9fdcb5;
 }
 
 @media (prefers-reduced-motion: reduce) {

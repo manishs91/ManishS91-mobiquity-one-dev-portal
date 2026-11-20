@@ -93,7 +93,7 @@ export default function ApiOverviewPage() {
               <ul className="divide-y divide-line-soft border-y border-line-soft">
                 {operations.map((op) => (
                   <li key={op.slug}>
-                    <Link href={`/api-reference/${op.slug}`} className="flex items-center gap-3 py-2 text-sm hover:text-rail">
+                    <Link href={`/api-reference/${op.slug}`} className="flex items-center gap-3 py-2 text-sm hover:text-brand-ink">
                       <MethodBadge method={op.method} size="sm" />
                       <span className="font-medium">{op.summary}</span>
                       <code className="ml-auto hidden truncate text-xs text-ink-faint sm:block">{op.path}</code>

@@ -16,7 +16,7 @@ export default function DocsIndex() {
             <ul className="space-y-3">
               {s.docs.map((d) => (
                 <li key={d.slug}>
-                  <Link href={`/docs/${d.slug}`} className="font-semibold text-rail hover:underline">{d.title}</Link>
+                  <Link href={`/docs/${d.slug}`} className="font-semibold text-brand-ink hover:underline">{d.title}</Link>
                   {d.summary ? <p className="text-sm text-ink-soft">{d.summary}</p> : null}
                 </li>
               ))}

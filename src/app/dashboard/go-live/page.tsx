@@ -19,7 +19,7 @@ export default async function GoLivePage() {
       <PageHeader title="Go live" intro="Tell us about your business so the Mobiquity One team can enable production. Reviews usually take a few business days." />
 
       {status === "approved" ? (
-        <div className="panel border-rail p-6">
+        <div className="panel border-ok p-6">
           <p className="text-lg font-bold">You&apos;re live</p>
           <p className="mt-1 text-ink-soft">Create production credentials and swap the base URL in your app.</p>
           <Link href="/dashboard/credentials" className="btn btn-primary mt-4">Create production credentials</Link>
@@ -42,9 +42,9 @@ export default async function GoLivePage() {
             <ul className="mt-3 space-y-2 text-sm">
               {required.map((x) => (
                 <li key={x.id} className="flex items-center gap-2">
-                  <span className={x.done ? "text-rail" : "text-ink-faint"}>{x.done ? "✓" : "○"}</span>
+                  <span className={x.done ? "text-ok" : "text-ink-faint"}>{x.done ? "✓" : "○"}</span>
                   <span className={x.done ? "" : "font-semibold"}>{x.label}</span>
-                  {!x.done ? <Link href={x.href} className="text-rail underline">Do this</Link> : null}
+                  {!x.done ? <Link href={x.href} className="text-brand-ink underline">Do this</Link> : null}
                 </li>
               ))}
             </ul>

@@ -83,7 +83,7 @@ export default async function OperationPage({ params }: Props) {
           <summary className="cursor-pointer font-semibold">Browse endpoints</summary>
           <div className="mt-3"><ApiNav activeSlug={op.slug} /></div>
         </details>
-          <p className="text-sm font-semibold text-rail">{op.group.title}</p>
+          <p className="text-sm font-semibold text-brand-ink">{op.group.title}</p>
           <h1 className="mt-1 text-3xl font-bold tracking-tight">{op.summary}</h1>
           <div className="mt-3 flex flex-wrap items-center gap-3">
             <MethodBadge method={op.method} />
@@ -111,7 +111,7 @@ export default async function OperationPage({ params }: Props) {
                     <li key={p.name} className="py-2.5">
                       <div className="flex flex-wrap items-baseline gap-2">
                         <code className="font-semibold">{p.name}</code>
-                        {p.required ? <span className="text-xs font-semibold text-signal">required</span> : null}
+                        {p.required ? <span className="text-xs font-semibold text-signal-ink">required</span> : null}
                       </div>
                       {p.description ? <p className="mt-1 text-sm text-ink-soft">{p.description}</p> : null}
                       {/tenant/i.test(p.name) ? (
@@ -142,7 +142,7 @@ export default async function OperationPage({ params }: Props) {
                 return (
                   <details key={status} className="group rounded-[var(--radius-md)] border border-line bg-surface" open={status.startsWith("2")}>
                     <summary className="flex cursor-pointer list-none items-center gap-3 px-4 py-2.5 marker:hidden">
-                      <span className={`font-mono text-sm font-semibold ${status.startsWith("2") ? "text-rail" : "text-danger"}`}>{status}</span>
+                      <span className={`font-mono text-sm font-semibold ${status.startsWith("2") ? "text-ok" : "text-danger"}`}>{status}</span>
                       <span className="text-sm text-ink-soft">{response.description}</span>
                     </summary>
                     {media?.schema ? (

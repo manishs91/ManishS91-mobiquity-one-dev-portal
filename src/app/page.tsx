@@ -41,10 +41,10 @@ export default function Home() {
               { title: "Initiate a payment", body: "Send a card or UPI payment from the API reference console. It signs the checksum for you.", href: "/api-reference/post-ecom-initiate-payment", cta: "Open Initiate Payment" },
             ].map((s, i) => (
               <li key={s.title} className="border-t-2 border-ink pt-4">
-                <p className="font-mono text-sm font-semibold text-signal">Step {i + 1}</p>
+                <p className="font-mono text-sm font-semibold text-signal-ink">Step {i + 1}</p>
                 <h3 className="mt-1 text-lg font-bold">{s.title}</h3>
                 <p className="mt-2 text-ink-soft">{s.body}</p>
-                <Link href={s.href} className="mt-3 inline-block font-semibold text-rail hover:underline">{s.cta}</Link>
+                <Link href={s.href} className="mt-3 inline-block font-semibold text-brand-ink hover:underline">{s.cta}</Link>
               </li>
             ))}
           </ol>
@@ -54,13 +54,13 @@ export default function Home() {
           <div className="mx-auto max-w-[1200px] px-5 py-16 lg:px-8">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <h2 className="text-2xl font-bold tracking-tight">What the API covers</h2>
-              <Link href="/api-reference" className="font-semibold text-rail hover:underline">All {visible} endpoints</Link>
+              <Link href="/api-reference" className="font-semibold text-brand-ink hover:underline">All {visible} endpoints</Link>
             </div>
             <dl className="mt-8 grid gap-x-12 sm:grid-cols-2 lg:grid-cols-3">
               {groups.map(({ group, operations }) => (
                 <div key={group.id} className="border-t border-line py-5">
                   <dt>
-                    <Link href={`/api-reference/${operations[0].slug}`} className="font-bold hover:text-rail">{group.title}</Link>
+                    <Link href={`/api-reference/${operations[0].slug}`} className="font-bold hover:text-brand-ink">{group.title}</Link>
                     <span className="ml-2 text-sm text-ink-faint">{operations.length}</span>
                   </dt>
                   <dd className="mt-1 text-sm text-ink-soft">{group.description}</dd>

@@ -82,14 +82,14 @@ export function ChecksumTool({ rules }: { rules: Rule[] }) {
           <p className="text-sm font-semibold">String that is hashed</p>
           <code className="mt-1 block break-all text-sm">{parts.map((p) => p.v).join("")}<span className="text-ink-faint">{salt ? "<salt>" : ""}</span></code>
         </div>
-        <div className="rounded-[var(--radius-lg)] border-2 border-rail bg-surface p-5">
+        <div className="rounded-[var(--radius-lg)] border-2 border-brand bg-surface p-5">
           <div className="flex items-center justify-between">
             <p className="text-sm font-semibold">{rule.field}</p>
-            {hash ? <CopyButton text={hash} className="!text-rail hover:!bg-rail-wash" /> : null}
+            {hash ? <CopyButton text={hash} className="!text-brand-ink hover:!bg-brand-wash" /> : null}
           </div>
           <code className="mt-1 block break-all text-sm">{hash || "—"}</code>
           {typeof given === "string" && given && hash ? (
-            <p className={`mt-3 text-sm font-semibold ${given.toLowerCase() === hash ? "text-rail" : "text-danger"}`}>
+            <p className={`mt-3 text-sm font-semibold ${given.toLowerCase() === hash ? "text-ok" : "text-danger"}`}>
               {given.toLowerCase() === hash ? "Matches the checksum in the body." : "Doesn't match the checksum in the body. Check field order, values and salt."}
             </p>
           ) : null}

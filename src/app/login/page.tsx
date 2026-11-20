@@ -11,7 +11,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
   const safeNext = next?.startsWith("/") && !next.startsWith("//") ? next : "/dashboard";
   if (await getSession()) redirect(safeNext);
   return (
-    <AuthShell title="Sign in" intro={<>New here? <Link className="font-semibold text-rail hover:underline" href={`/signup?next=${encodeURIComponent(safeNext)}`}>Create a sandbox account</Link>.</>}>
+    <AuthShell title="Sign in" intro={<>New here? <Link className="font-semibold text-brand-ink hover:underline" href={`/signup?next=${encodeURIComponent(safeNext)}`}>Create a sandbox account</Link>.</>}>
       <LoginForm next={safeNext} />
     </AuthShell>
   );

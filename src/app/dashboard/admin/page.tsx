@@ -26,7 +26,7 @@ export default async function AdminPage() {
             </div>
             <dl className="mt-4 grid gap-x-8 gap-y-2 text-sm sm:grid-cols-2 lg:grid-cols-3">
               <div><dt className="text-xs text-ink-faint">Registration</dt><dd>{r.registrationNumber}</dd></div>
-              <div><dt className="text-xs text-ink-faint">Website</dt><dd><a href={r.website} className="text-rail underline" rel="noopener noreferrer" target="_blank">{r.website}</a></dd></div>
+              <div><dt className="text-xs text-ink-faint">Website</dt><dd><a href={r.website} className="text-brand-ink underline" rel="noopener noreferrer" target="_blank">{r.website}</a></dd></div>
               <div><dt className="text-xs text-ink-faint">Category</dt><dd>{r.businessCategory}</dd></div>
               <div><dt className="text-xs text-ink-faint">Monthly volume</dt><dd>{r.expectedMonthlyVolume}</dd></div>
               <div><dt className="text-xs text-ink-faint">Methods</dt><dd>{r.paymentMethods.join(", ")}</dd></div>

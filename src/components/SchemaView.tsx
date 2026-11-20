@@ -85,7 +85,7 @@ function Field({ spec, name, prop, required, stack, depth }: { spec: OpenAPISpec
     <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
       <code className="font-semibold text-ink">{name}</code>
       <span className="font-mono text-xs text-ink-soft">{typeLabel(spec, prop)}</span>
-      {isRequired ? <span className="text-xs font-semibold text-signal">required</span> : null}
+      {isRequired ? <span className="text-xs font-semibold text-signal-ink">required</span> : null}
       {p?.deprecated ? <span className="text-xs font-semibold text-danger">deprecated</span> : null}
     </div>
   );

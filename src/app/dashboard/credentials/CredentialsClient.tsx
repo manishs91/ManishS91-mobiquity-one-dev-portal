@@ -71,7 +71,7 @@ export function CredentialsClient({ initial, canManage, productionApproved }: { 
                 <div>
                   <p className="font-bold">
                     {c.label}
-                    <span className={`ml-2 rounded px-1.5 py-0.5 text-xs font-semibold ${c.environment === "sandbox" ? "bg-line-soft text-ink-soft" : "bg-rail-wash text-rail-deep"}`}>{c.environment}</span>
+                    <span className={`ml-2 rounded px-1.5 py-0.5 text-xs font-semibold ${c.environment === "sandbox" ? "bg-line-soft text-ink-soft" : "bg-ok-wash text-ok-deep"}`}>{c.environment}</span>
                     {c.status === "revoked" ? <span className="ml-2 rounded bg-danger-wash px-1.5 py-0.5 text-xs font-semibold text-danger">revoked</span> : null}
                   </p>
                   <p className="text-xs text-ink-faint">
@@ -120,7 +120,7 @@ export function CredentialsClient({ initial, canManage, productionApproved }: { 
                         <code className="break-all">{salt[c.id]}</code>
                       ) : (
                         <button
-                          className="text-sm font-semibold text-rail hover:underline"
+                          className="text-sm font-semibold text-brand-ink hover:underline"
                           onClick={async () => {
                             const r = await fetch(`/api/credentials/${c.id}/salt`).then((x) => x.json());
                             if (r.checksumSalt) setSalt((m) => ({ ...m, [c.id]: r.checksumSalt }));

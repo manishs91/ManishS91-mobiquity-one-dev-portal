@@ -13,7 +13,7 @@ export default async function SignupPage({ searchParams }: { searchParams: Promi
   return (
     <AuthShell
       title={invite ? "Join your team" : "Create a sandbox account"}
-      intro={<>Already have an account? <Link className="font-semibold text-rail hover:underline" href={`/login?next=${encodeURIComponent(safeNext)}`}>Sign in</Link>.</>}
+      intro={<>Already have an account? <Link className="font-semibold text-brand-ink hover:underline" href={`/login?next=${encodeURIComponent(safeNext)}`}>Sign in</Link>.</>}
     >
       <SignupForm next={safeNext} inviteToken={invite} invitedEmail={email} />
     </AuthShell>
