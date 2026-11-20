@@ -105,6 +105,8 @@ export interface NamedExample {
   key: string;
   label: string;
   value: unknown;
+  /** Schema name of the oneOf branch this example was generated from, when there is one. */
+  ref?: string;
 }
 
 /**
@@ -127,8 +129,9 @@ export function mediaExamples(spec: OpenAPISpec, media: MediaType | undefined): 
   const variants = root ? (mergeAllOf(spec, root).oneOf ?? mergeAllOf(spec, root).anyOf) : undefined;
   if (variants && variants.length > 1) {
     variants.forEach((v, i) => {
-      const label = isRef(v) ? v.$ref.split("/").pop()! : (v.title ?? `Option ${i + 1}`);
-      out.push({ key: `variant-${i}`, label: humanize(label), value: sampleFromSchema(spec, media.schema, { branch: i }) });
+      const ref = isRef(v) ? v.$ref.split("/").pop()! : undefined;
+      const label = ref ?? (v as Schema).title ?? `Option ${i + 1}`;
+      out.push({ key: `variant-${i}`, label: humanize(label), value: sampleFromSchema(spec, media.schema, { branch: i }), ref });
     });
     return out;
   }

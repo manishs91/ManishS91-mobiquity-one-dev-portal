@@ -1,7 +1,7 @@
 ---
 title: Saved cards and UPI IDs
-section: Accept payments
-order: 30
+section: Server-to-server integration
+order: 60
 summary: Let returning customers pay with a tokenized card or a saved UPI ID.
 ---
 

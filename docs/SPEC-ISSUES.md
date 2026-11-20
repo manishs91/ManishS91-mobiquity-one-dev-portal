@@ -13,6 +13,19 @@ From `npm run spec:lint` on the spec downloaded from Redocly (18 Nov 2026). The 
 | 5 | `info.version` missing (required) | info | Add a version and bump it on each release. |
 | 6 | `servers` points at `https://demo.payplus-comviva.com/` | servers | Publish the public sandbox and production base URLs. |
 
+## Checkout integration gaps
+
+Found while writing the Mobiquity One Checkout guide. Merchants can't complete a checkout integration from the spec alone.
+
+| Issue | Detail |
+| --- | --- |
+| Checkout token contradicts itself | `WebCheckoutTokenRequest` requires `tenant_oauth_hash` ("hash of TenantId_ClientSecret"), but the `webCheckoutCredentials` example sends `client_id` + `client_secret`. The hash algorithm isn't stated. |
+| Token use on `/mpg/web-checkout` | No security is declared, so it's unclear how the checkout token is passed. |
+| `merchantData` encryption | AES/CBC/PKCS5Padding is named, but not the key size, how the key and IV are issued, or the output encoding. |
+| `merchantData` carries `checksumSalt` | The order payload includes the merchant's salt. Confirm this is intended; it means the salt travels in every checkout URL (encrypted). |
+| `callbackurl` vs `merchantRedirectURL` | What each receives isn't documented. |
+| Request body on a GET | `/mpg/web-checkout` documents `MerchantDetailsRequest` as a request body on a GET; it's actually the pre-encryption shape of `merchantData`. |
+
 ## Worth fixing
 
 | Issue | Detail |

@@ -32,6 +32,11 @@ export function renderMarkdown(src: string): string {
   return marked.parse(src, { async: false }) as string;
 }
 
+/** Inline markdown (bold, code, links) for short strings such as spec descriptions. HTML is escaped. */
+export function renderInline(src: string): string {
+  return marked.parseInline(src, { async: false }) as string;
+}
+
 export function Markdown({ source, className = "prose-doc" }: { source: string; className?: string }) {
   return <div className={className} dangerouslySetInnerHTML={{ __html: renderMarkdown(source) }} />;
 }

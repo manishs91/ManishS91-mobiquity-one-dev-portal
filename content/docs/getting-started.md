@@ -7,7 +7,7 @@ summary: From a new account to a successful sandbox payment.
 
 # Quickstart
 
-This walks through one complete payment in the sandbox: get credentials, get a token, initiate a UPI payment, receive the webhook and confirm the status. Nothing here moves real money.
+This walks through one complete server-to-server UPI payment in the sandbox: get credentials, get a token, initiate the payment, receive the webhook and confirm the status. Nothing here moves real money. Using the hosted checkout instead? Follow steps 1 and 2, then go to [Open the checkout](/docs/checkout-integrate).
 
 ## 1. Create a sandbox account
 

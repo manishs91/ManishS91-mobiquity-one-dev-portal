@@ -22,7 +22,7 @@ export interface Doc extends DocMeta {
   body: string;
 }
 
-export const SECTION_ORDER = ["Get started", "Accept payments", "After the payment", "Go live", "Reference"];
+export const SECTION_ORDER = ["Get started", "Server-to-server integration", "Checkout integration", "After the payment", "Go live", "Reference"];
 
 const DIR = path.join(process.cwd(), "content", "docs");
 
