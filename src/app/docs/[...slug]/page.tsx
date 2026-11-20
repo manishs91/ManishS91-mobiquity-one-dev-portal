@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Markdown } from "@/components/Markdown";
+import { GuideBody } from "@/components/docs/GuideBody";
 import { getDoc, headings, neighbours } from "@/lib/docs";
 import { codeCategory, collectResponseCodes } from "@/lib/openapi/codes";
 import { getApi } from "@/lib/openapi/spec";
@@ -24,7 +24,7 @@ export default async function DocPage({ params }: Props) {
     <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_220px]">
       <article>
         <p className="mb-2 text-sm font-semibold text-brand-ink">{doc.section}</p>
-        <Markdown source={doc.body} />
+        <GuideBody body={doc.body} />
         {slug === "errors" ? <ResponseCodeTable /> : null}
         <nav aria-label="More guides" className="mt-12 flex justify-between gap-4 border-t border-line pt-6 text-sm">
           {prev ? <Link href={`/docs/${prev.slug}`} className="font-semibold text-ink-soft hover:text-ink">Previous: {prev.title}</Link> : <span />}

@@ -1,11 +1,13 @@
 ---
 title: Offers
-section: Accept payments
-order: 40
+section: Checkout integration
+order: 30
 summary: Create discounts and apply merchant or payment-method offers.
 ---
 
 # Offers
+
+The checkout shows and applies eligible offers for you. With a server-to-server integration, apply the offer with the endpoints below and send the discounted amount in Initiate Payment.
 
 Offers are discounts configured for your business, either general merchant offers or tied to a payment method (for example, 10% off with a particular bank's cards).
 

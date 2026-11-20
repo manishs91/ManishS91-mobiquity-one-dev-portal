@@ -38,7 +38,7 @@ Mobiquity One uses OAuth2-style bearer tokens. Your server exchanges its tenant 
 | Grant type | Use it for |
 | --- | --- |
 | `client_credentials` | Your server calling the merchant APIs. This is the one you need. |
-| `webcheckout_credentials` | The hosted web checkout client. Also needs `client_id`. |
+| `webcheckout_credentials` | [Mobiquity One Checkout](/docs/checkout-integrate#1-get-a-checkout-token). Uses `tenant_oauth_hash`. |
 | `user_credentials` | The Mobiquity One admin portal. Not for merchant integrations. |
 
 ## Use the token
