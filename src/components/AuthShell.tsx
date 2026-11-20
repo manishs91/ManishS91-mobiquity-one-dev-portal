@@ -11,7 +11,7 @@ export function AuthShell({ title, intro, children }: { title: string; intro?: R
           <div className="mt-8">{children}</div>
         </div>
       </div>
-      <aside className="hidden flex-col justify-center bg-ink px-16 text-[#d9e2ec] lg:flex">
+      <aside className="hidden flex-col justify-center bg-brand px-16 text-white lg:flex">
         <p className="max-w-md text-2xl font-semibold leading-snug text-white">Your sandbox comes with everything a payment needs.</p>
         <ul className="mt-8 max-w-md space-y-4 text-[15px]">
           <li><span className="font-semibold text-white">Tenant ID and client secret</span> for OAuth2 access tokens.</li>

@@ -19,7 +19,7 @@ export default async function WebhooksPage() {
           <>
             Mobiquity One posts the final transaction status to the <code>primaryWebhookURL</code> you send with each payment, and retries on the{" "}
             <code>fallbackWebhookURL</code>. Save your URLs here to reuse them in the console and to send test events. See the{" "}
-            <Link href="/docs/webhooks" className="text-rail underline">webhooks guide</Link>.
+            <Link href="/docs/webhooks" className="text-brand-ink underline">webhooks guide</Link>.
           </>
         }
       />

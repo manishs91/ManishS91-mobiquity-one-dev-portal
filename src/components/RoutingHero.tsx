@@ -34,13 +34,13 @@ export function RoutingHero() {
         {/* request card */}
         <g>
           <rect x="8" y="88" width="220" height="164" rx="12" fill="var(--color-code)" />
-          <text x="24" y="114" fontFamily="var(--font-mono)" fontSize="11" fill="#9fb3c8">POST /ecom/initiatePayment</text>
+          <text x="24" y="114" fontFamily="var(--font-mono)" fontSize="11" fill="#a3a7b0">POST /ecom/initiatePayment</text>
           <g fontFamily="var(--font-mono)" fontSize="11.5">
-            <text x="24" y="142" fill="#8fd3c3">"amount"<tspan fill="#dbe7f3">: </tspan><tspan fill="#f6c98b">"500"</tspan></text>
-            <text x="24" y="162" fill="#8fd3c3">"currencyCode"<tspan fill="#dbe7f3">: </tspan><tspan fill="#f6c98b">"INR"</tspan></text>
-            <text x="24" y="182" fill="#8fd3c3">"method"<tspan fill="#dbe7f3">: </tspan><tspan fill="#f6c98b">"UPI"</tspan></text>
-            <text x="24" y="202" fill="#8fd3c3">"preferredPg"<tspan fill="#dbe7f3">: </tspan><tspan fill="#f6c98b">"6"</tspan></text>
-            <text x="24" y="222" fill="#8fd3c3">"fallback"<tspan fill="#dbe7f3">: </tspan><tspan fill="#f6c98b">"Y"</tspan></text>
+            <text x="24" y="142" fill="#f6a7b4">"amount"<tspan fill="#e6e7ea">: </tspan><tspan fill="#f9c98f">"500"</tspan></text>
+            <text x="24" y="162" fill="#f6a7b4">"currencyCode"<tspan fill="#e6e7ea">: </tspan><tspan fill="#f9c98f">"INR"</tspan></text>
+            <text x="24" y="182" fill="#f6a7b4">"method"<tspan fill="#e6e7ea">: </tspan><tspan fill="#f9c98f">"UPI"</tspan></text>
+            <text x="24" y="202" fill="#f6a7b4">"preferredPg"<tspan fill="#e6e7ea">: </tspan><tspan fill="#f9c98f">"6"</tspan></text>
+            <text x="24" y="222" fill="#f6a7b4">"fallback"<tspan fill="#e6e7ea">: </tspan><tspan fill="#f9c98f">"Y"</tspan></text>
           </g>
         </g>
         <circle cx="228" cy="170" r="5" fill="var(--color-signal)" />
@@ -53,7 +53,7 @@ export function RoutingHero() {
             <text x="410" y={p.y + 15} fontSize="11.5" fill="var(--color-ink-soft)">preferredPg {p.id}</text>
           </g>
         ))}
-        <text className="chosen" x="540" y="62" textAnchor="end" fontSize="11" fontWeight="700" fill="var(--color-rail)">routed</text>
+        <text className="chosen" x="540" y="62" textAnchor="end" fontSize="11" fontWeight="700" fill="var(--color-ok)">routed</text>
         <text className="route-fb" x="540" y="162" textAnchor="end" fontSize="11" fill="var(--color-ink-soft)">fallback</text>
       </svg>
     </figure>

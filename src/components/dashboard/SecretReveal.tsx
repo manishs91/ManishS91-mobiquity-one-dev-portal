@@ -37,13 +37,13 @@ export function SecretReveal({ revealed }: { revealed: Revealed }) {
               <code className="block break-all text-[13px]">{v}</code>
               <span className="text-xs text-ink-faint">{hint}</span>
             </dd>
-            <CopyButton text={v} className="justify-self-start !text-rail hover:!bg-rail-wash" />
+            <CopyButton text={v} className="justify-self-start !text-brand-ink hover:!bg-brand-wash" />
           </div>
         ))}
       </dl>
       <div className="flex items-center justify-between border-t border-line px-4 py-2.5">
         <span className="text-xs text-ink-soft">Store these in your secrets manager or a local .env file.</span>
-        <CopyButton text={env} label="Copy as .env" className="!text-rail hover:!bg-rail-wash" />
+        <CopyButton text={env} label="Copy as .env" className="!text-brand-ink hover:!bg-brand-wash" />
       </div>
     </div>
   );

@@ -128,7 +128,7 @@ export function WebhooksClient({
                 <li key={d.id}>
                   <details className="panel">
                     <summary className="flex cursor-pointer list-none flex-wrap items-center gap-3 px-4 py-3 text-sm marker:hidden">
-                      <span className={`rounded px-2 py-0.5 font-mono text-xs font-semibold ${ok ? "bg-rail-wash text-rail-deep" : "bg-danger-wash text-danger"}`}>
+                      <span className={`rounded px-2 py-0.5 font-mono text-xs font-semibold ${ok ? "bg-ok-wash text-ok-deep" : "bg-danger-wash text-danger"}`}>
                         {d.responseStatus ?? "error"}
                       </span>
                       <span className="font-medium">{d.event}</span>
@@ -138,11 +138,11 @@ export function WebhooksClient({
                     <div className="grid gap-3 border-t border-line-soft p-4 lg:grid-cols-2">
                       <div>
                         <p className="mb-1 text-xs font-semibold text-ink-soft">Payload sent</p>
-                        <pre className="max-h-72 overflow-auto rounded bg-code p-3 text-xs text-[#dbe7f3]"><code>{highlightJson(JSON.stringify(JSON.parse(d.requestBody), null, 2))}</code></pre>
+                        <pre className="max-h-72 overflow-auto rounded bg-code p-3 text-xs text-[#e6e7ea]"><code>{highlightJson(JSON.stringify(JSON.parse(d.requestBody), null, 2))}</code></pre>
                       </div>
                       <div>
                         <p className="mb-1 text-xs font-semibold text-ink-soft">Your response</p>
-                        <pre className="max-h-72 overflow-auto rounded bg-code p-3 text-xs text-[#dbe7f3]"><code>{d.error ?? d.responseBody ?? "(empty)"}</code></pre>
+                        <pre className="max-h-72 overflow-auto rounded bg-code p-3 text-xs text-[#e6e7ea]"><code>{d.error ?? d.responseBody ?? "(empty)"}</code></pre>
                       </div>
                     </div>
                   </details>

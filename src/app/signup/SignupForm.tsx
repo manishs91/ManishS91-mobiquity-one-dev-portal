@@ -70,7 +70,7 @@ export function SignupForm({ next, inviteToken, invitedEmail }: { next: string; 
       </div>
       <label className="flex items-start gap-2 text-sm">
         <input type="checkbox" name="terms" className="mt-1" required />
-        <span>I agree to the <Link href="/legal/terms" className="text-rail underline" target="_blank">developer terms</Link>.</span>
+        <span>I agree to the <Link href="/legal/terms" className="text-brand-ink underline" target="_blank">developer terms</Link>.</span>
       </label>
       {err("acceptTerms")}
       {error ? <p role="alert" className="text-sm text-danger">{error}</p> : null}

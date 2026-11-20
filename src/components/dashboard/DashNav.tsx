@@ -13,7 +13,7 @@ export function DashNav({ items }: { items: { href: string; label: string }[] })
             key={i.href}
             href={i.href}
             aria-current={active ? "page" : undefined}
-            className={`shrink-0 rounded-[var(--radius-md)] px-3 py-2 text-sm ${active ? "bg-rail-wash font-semibold text-rail-deep" : "text-ink-soft hover:bg-line-soft hover:text-ink"}`}
+            className={`shrink-0 rounded-[var(--radius-md)] px-3 py-2 text-sm ${active ? "bg-brand-wash font-semibold text-brand-deep" : "text-ink-soft hover:bg-line-soft hover:text-ink"}`}
           >
             {i.label}
           </Link>

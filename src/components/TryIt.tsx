@@ -206,7 +206,7 @@ export function TryIt(props: Props) {
                   <label className="mb-1 flex items-baseline gap-2 text-sm" htmlFor={`p-${key}`}>
                     <code className="font-semibold">{p.name}</code>
                     <span className="text-xs text-ink-faint">{p.in}</span>
-                    {p.required ? <span className="text-xs font-semibold text-signal">required</span> : null}
+                    {p.required ? <span className="text-xs font-semibold text-signal-ink">required</span> : null}
                   </label>
                   <input
                     id={`p-${key}`}
@@ -248,7 +248,7 @@ export function TryIt(props: Props) {
             {freshOrder ? (
               <button
                 type="button"
-                className="mt-1 text-xs font-semibold text-rail hover:underline"
+                className="mt-1 text-xs font-semibold text-brand-ink hover:underline"
                 onClick={() => {
                   try {
                     setBody(JSON.stringify(prepare(JSON.parse(body), cred, path), null, 2));
@@ -285,12 +285,12 @@ export function TryIt(props: Props) {
       {result && (
         <div className="border-t border-line p-5" aria-live="polite">
           <div className="mb-2 flex items-center gap-3 text-sm">
-            <span className={`rounded px-2 py-0.5 font-mono text-xs font-semibold ${ok ? "bg-rail-wash text-rail-deep" : "bg-danger-wash text-danger"}`}>
+            <span className={`rounded px-2 py-0.5 font-mono text-xs font-semibold ${ok ? "bg-ok-wash text-ok-deep" : "bg-danger-wash text-danger"}`}>
               {result.status}
             </span>
             <span className="text-ink-soft">{result.durationMs} ms</span>
           </div>
-          <pre className="max-h-80 overflow-auto rounded-[var(--radius-md)] bg-code p-4 text-[12.5px] text-[#dbe7f3]">
+          <pre className="max-h-80 overflow-auto rounded-[var(--radius-md)] bg-code p-4 text-[12.5px] text-[#e6e7ea]">
             <code>{typeof result.body === "string" ? result.body : highlightJson(JSON.stringify(result.body, null, 2))}</code>
           </pre>
           <details className="mt-3">

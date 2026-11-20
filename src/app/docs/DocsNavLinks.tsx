@@ -18,7 +18,7 @@ export function DocsNavLinks({ nav }: { nav: { section: string; docs: { slug: st
                   <Link
                     href={href}
                     aria-current={active ? "page" : undefined}
-                    className={`block rounded px-2 py-1 ${active ? "bg-rail-wash font-semibold text-rail-deep" : "text-ink-soft hover:bg-line-soft hover:text-ink"}`}
+                    className={`block rounded px-2 py-1 ${active ? "bg-brand-wash font-semibold text-brand-deep" : "text-ink-soft hover:bg-line-soft hover:text-ink"}`}
                   >
                     {d.title}
                   </Link>

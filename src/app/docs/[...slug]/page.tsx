@@ -23,12 +23,12 @@ export default async function DocPage({ params }: Props) {
   return (
     <div className="grid gap-10 xl:grid-cols-[minmax(0,1fr)_220px]">
       <article>
-        <p className="mb-2 text-sm font-semibold text-rail">{doc.section}</p>
+        <p className="mb-2 text-sm font-semibold text-brand-ink">{doc.section}</p>
         <Markdown source={doc.body} />
         {slug === "errors" ? <ResponseCodeTable /> : null}
         <nav aria-label="More guides" className="mt-12 flex justify-between gap-4 border-t border-line pt-6 text-sm">
           {prev ? <Link href={`/docs/${prev.slug}`} className="font-semibold text-ink-soft hover:text-ink">Previous: {prev.title}</Link> : <span />}
-          {next ? <Link href={`/docs/${next.slug}`} className="font-semibold text-rail hover:underline">Next: {next.title}</Link> : null}
+          {next ? <Link href={`/docs/${next.slug}`} className="font-semibold text-brand-ink hover:underline">Next: {next.title}</Link> : null}
         </nav>
       </article>
       {toc.length > 1 ? (
